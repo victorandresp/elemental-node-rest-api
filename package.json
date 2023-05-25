@@ -1,0 +1,8 @@
+{
+  "name": "elemental-node-rest-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/victorandresp/elemental-node-rest-api.git",
+  "author": "victorandresp <ponceottamendi27@gmail.com>",
+  "license": "MIT"
+}
