@@ -1,6 +1,7 @@
 const path = require("path")
 const DB_PATH = path.join(`${__dirname}/../data/db.json`)
 const db = require(DB_PATH)
+const fs = require("fs")
 
 class QuoteController {
     async get(req, res){
@@ -17,7 +18,19 @@ class QuoteController {
         return res.status(200).send(quoteGetted)
     }
     async add(req, res){
-        return res.send({ message: 'Quote controller !'})
+        try {
+            const { body: quote } = req
+            console.log(quote);
+            const id = db.length
+            quote.id = id
+            db.push(quote)
+            fs.writeFileSync(DB_PATH, JSON.stringify(db))
+            return res.status(201).send({ message: `Added new quote with the id: ${id}`})
+            
+        } catch (error) {
+            console.log(error);
+            return res.status(400).send({ message: 'Bad request !'})
+        }
     }
 
 }
