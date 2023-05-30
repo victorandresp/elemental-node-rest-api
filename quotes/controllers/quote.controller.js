@@ -8,8 +8,13 @@ class QuoteController {
         return res.status(200).send(db)
     }
     async getOne(req, res){
-        console.log("req", req);
-        return res.send({ message: 'Quote controller !'})
+        const { id } = req.params
+        console.log('id', typeof id);
+        const quoteGetted = db.find(q => q.id === parseInt(id))
+        if(!quoteGetted){
+            return res.status(404).send({ message: 'Quote not found !'})
+        }
+        return res.status(200).send(quoteGetted)
     }
     async add(req, res){
         return res.send({ message: 'Quote controller !'})
