@@ -34,4 +34,7 @@ switch (command) {
 }
 
 // COMMANDS
-// yarn dev:sequelize --create:Contact --firstname="Test" --lastname="test" --phone="33333333" --email="test@email.com"
+// #CREATE
+// yarn dev:sequelize --create:Contact --firstname="Test2" --lastname="test2" --phone="44444444" --email="test2@email.com"
+// #READ
+// yarn dev:sequelize --read:Contact

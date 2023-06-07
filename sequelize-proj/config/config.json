@@ -1,7 +1,7 @@
 {
   "development": {
     "dialect": "sqlite",
-    "storage": "./db.sqlite3"
+    "storage": "./sequelize-proj/db.sqlite3"
   },
   "production": {
     "dialect": "sqlite",
