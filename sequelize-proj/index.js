@@ -42,6 +42,14 @@ switch (command) {
             }
         }).then(console.log('Updated Successfully'))
         .catch(console.log)
+    case CRUD.DELETE:
+        const idDelete = parseInt(args[1].split("=")[1])
+        db[entity].destroy({
+            where: {
+              id:idDelete
+            }
+          }).then(console.log('Deleted Successfully'))
+          .catch(console.log)
     default:
         console.log("Operation not found")
         break;
@@ -52,3 +60,7 @@ switch (command) {
 // yarn dev:sequelize --create:Contact --firstname="Test2" --lastname="test2" --phone="44444444" --email="test2@email.com"
 // #READ
 // yarn dev:sequelize --read:Contact
+// #UPDATE
+// yarn dev:sequelize --update:Contact --id=1 --firstname="Vic"
+// #UPDATE
+// yarn dev:sequelize --delete:Contact --id=4
