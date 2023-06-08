@@ -28,6 +28,20 @@ switch (command) {
          db[entity].findAll()
         .then(console.log)
         .catch(console.log);
+    case CRUD.UPDATE:
+        const updateData = {}
+        const id = parseInt(args[1].split("=")[1])
+
+        args.slice(1).forEach(arg => {
+            const tmp = arg.split("=")
+            updateData[tmp[0].substring(2)] = tmp[1]
+        })
+        db[entity].update(updateData, {
+            where:{
+                id: id
+            }
+        }).then(console.log('Updated Successfully'))
+        .catch(console.log)
     default:
         console.log("Operation not found")
         break;
