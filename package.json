@@ -9,7 +9,9 @@
     "dev": "node index",
     "dev:quotes": "nodemon quotes/index.js",
     "dev:sequelize": "node sequelize-proj/index.js",
-    "dev:mongo": "node mongo-db-pj/index.js"
+    "dev:mongo": "node mongo-db-pj/index.js",
+    "dev:restful": "node RESTful/index.js"
+
   },
   "dependencies": {
     "awilix": "^8.0.1",
