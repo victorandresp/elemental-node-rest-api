@@ -1,7 +1,7 @@
 let _homeService = null;
 
 class HomeController { 
-    constructor({ HomeService}){
+    constructor({ HomeService }){
         _homeService = HomeService
     }
 

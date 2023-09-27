@@ -12,7 +12,7 @@ container.register({
     HomeService: asClass(HomeService).singleton()
 })
 .register({
-    HomeController: asClass(HomeService).bind(HomeController).singleton()
+    HomeController: asClass(HomeController.bind(HomeController)).singleton()
 })
 
 module.exports = container
