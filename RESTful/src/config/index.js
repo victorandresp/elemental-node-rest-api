@@ -1,6 +1,4 @@
-if(process.env.NODE_ENV){
-    require("dotenv").config();
-}
+require("dotenv").config();
 
 module.exports = { 
     PORT: process.env.PORT,
