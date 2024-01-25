@@ -10,7 +10,8 @@
     "dev:quotes": "nodemon quotes/index.js",
     "dev:sequelize": "node sequelize-proj/index.js",
     "dev:mongo": "node mongo-db-pj/index.js",
-    "dev:restful": "node RESTful/index.js"
+    "dev:restful": "node RESTful/index.js",
+    "dev:ideas": "node ideas-api/index.js"
 
   },
   "dependencies": {
