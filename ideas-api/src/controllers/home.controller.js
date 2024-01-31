@@ -10,3 +10,5 @@ class HomeController {
         return res.send(_homeService.index());
     }
 }
+
+module.exports = HomeController

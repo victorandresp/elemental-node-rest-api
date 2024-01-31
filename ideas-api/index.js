@@ -1,5 +1,5 @@
 const container = require("./src/startup/container")
-const server = containter.resolve("app")
+const server = container.resolve("app")
 
 const { MONGO_URI } = container.resolve("config")
 
