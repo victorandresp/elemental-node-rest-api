@@ -2,11 +2,9 @@ const mongoose = require("mongoose")
 
 const { Schema } = mongoose
 
-const IdeaSchema = new Schema ({
-    idea: { type: String, required: true },
+const CommentSchema = new Schema ({
+    comment: { type: String, required: true },
     description: { type: String  },
-    upvotes: [{type: Boolean}],
-    downvotes:[{type: Boolean}],
     author: {
         type: Schema.Types.ObjectId, 
         ref: "user", 
@@ -16,4 +14,4 @@ const IdeaSchema = new Schema ({
     comments: []
 })
 
-module.exports = mongoose.model("idea", IdeaSchema)
+module.exports = mongoose.model("comment", CommentSchema)
