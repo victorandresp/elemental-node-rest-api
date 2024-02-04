@@ -13,7 +13,14 @@ const IdeaSchema = new Schema ({
         required:true, 
         autopopulate: true
     },
-    comments: []
+    comments: [
+        {
+            type: Schema.Types.ObjectId, 
+            ref: "comment", 
+            required:true, 
+            autopopulate: true
+        }
+    ]
 })
 
 module.exports = mongoose.model("idea", IdeaSchema)
