@@ -9,7 +9,7 @@ class IdeaRepository extends BaseReporsitory{
     }
 
     async getUserIdeas(author){
-        return _idea.find({ author })
+        return _idea.findOne({ author })
     }
 }
 
