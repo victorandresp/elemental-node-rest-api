@@ -7,6 +7,10 @@ class UserRepository extends BaseReporsitory{
         super(User)
         _user = User
     }
+
+    async getUserByUsername(username){
+        return await _user.findOne({ username })
+    }
 }
 
 module.exports = UserRepository
