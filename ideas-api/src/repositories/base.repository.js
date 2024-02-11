@@ -1,5 +1,5 @@
-class BaseReporsitory { 
-    constructor(){
+class BaseRepository { 
+    constructor(model){
         this.model = model
     }
 
@@ -22,4 +22,4 @@ class BaseReporsitory {
     }
 }
 
-module.exports = BaseReporsitory
+module.exports = BaseRepository

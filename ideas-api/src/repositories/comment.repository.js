@@ -1,8 +1,8 @@
-const BaseReporsitory = require("./base.repository")
+const BaseRepository = require("./base.repository")
 
 let _comment = null
 
-class CommentRepository extends BaseReporsitory{ 
+class CommentRepository extends BaseRepository{ 
     constructor({ Comment }){
         super(Comment)
         _comment = Comment
