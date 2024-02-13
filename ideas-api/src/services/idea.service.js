@@ -1,4 +1,5 @@
 const BaseService = require("./base.service")
+const { ThrowHttpError } = require("../helpers")
 let _ideaRepository = null
 
 class IdeaService extends BaseService {
