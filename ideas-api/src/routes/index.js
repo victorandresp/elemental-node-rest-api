@@ -20,6 +20,7 @@ module.exports = function({ HomeRoutes, UserRoutes, IdeaRoutes, CommentRoutes })
         apiRoutes.use("/user", UserRoutes)
         apiRoutes.use("/idea", IdeaRoutes)
         apiRoutes.use("/comment", CommentRoutes)
+        apiRoutes.use("/auth", AuthRoutes)
 
         router.use("/v1/api", apiRoutes)
 
