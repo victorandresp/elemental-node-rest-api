@@ -25,7 +25,7 @@ class AuthService extends BaseService {
         if(!userExists){
             ThrowHttpError(404, "user doesn't exists")
         }
-        const validPassword = userExists.comparePasswords(password) // this function can be called because userExists is a mongoose entity of User Model.
+        const validPassword = userExists.comparePassword(password) // this function can be called because userExists is a mongoose entity of User Model.
         if(!validPassword){
             ThrowHttpError(401, "invalid password")
         }
@@ -34,7 +34,7 @@ class AuthService extends BaseService {
             username: userExists.username,
             id: userExists._id
         }
-        const token = JWTHelper(userToEncode)
+        const token = JWTHelper.generateToken(userToEncode)
 
         return { token, user: userExists }
     }
