@@ -1,3 +1,4 @@
+const BaseService = require("./base.service")
 const { JWTHelper } = require('../helpers')
 const { ThrowHttpError } = require("../helpers")
 let _userService = null
