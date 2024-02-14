@@ -6,7 +6,7 @@ require("express-async-errors")
 // own middlewares
 const { NotFoundMiddleware, ErrorMiddleware } = require("../middlewares")
 
-module.exports = function({ HomeRoutes, UserRoutes, IdeaRoutes, CommentRoutes }){
+module.exports = function({ HomeRoutes, UserRoutes, IdeaRoutes, CommentRoutes, AuthRoutes }){
     const router = express.Router()
     const apiRoutes = express.Router()
 
