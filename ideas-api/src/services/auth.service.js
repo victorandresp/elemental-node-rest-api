@@ -5,6 +5,7 @@ let _userService = null
 
 class AuthService extends BaseService {
     constructor({ UserService }){
+        super(UserService)
         _userService = UserService
     }
 
