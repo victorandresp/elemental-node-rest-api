@@ -5,7 +5,7 @@ const { ThrowHttpError } = require("../helpers")
 module.exports = (req, res, next) =>{
     const token = req.headers["authorization"]
     if(!token){
-        ThrowHttpError(401, "token must be sent")
+        return res.status(401).send({ message: "token must be sent" })
     }
 
     jwt.verify(token, JWT_SECRET, (err, decodedToken) =>{
