@@ -11,7 +11,8 @@
     "dev:sequelize": "node sequelize-proj/index.js",
     "dev:mongo": "node mongo-db-pj/index.js",
     "dev:restful": "node RESTful/index.js",
-    "dev:ideas": "nodemon ideas-api/index.js"
+    "dev:ideas": "nodemon ideas-api/index.js",
+    "test": "jest"
   },
   "dependencies": {
     "awilix": "^8.0.1",
