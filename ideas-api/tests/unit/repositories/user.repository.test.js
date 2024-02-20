@@ -21,4 +21,16 @@ describe("User Repository Test", ()=>{
         expect(JSON.parse(JSON.stringify(expected))).toMatchObject(_user)
 
     })
+
+    it("Should find a user by username", async () => {
+        const _user = { ...user }
+        delete _user.password;
+        mockingoose(User).toReturn(user, "findOne");
+
+        const _userRepository = new UserRepository({ User })
+        const expected = await _userRepository.getUserByUsername(_user.username)
+
+        expect(JSON.parse(JSON.stringify(expected))).toMatchObject(_user)
+
+    })
 })
