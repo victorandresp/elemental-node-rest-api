@@ -62,6 +62,19 @@ describe("User Repository Test", ()=>{
 
     })
 
+    it("Should delete a user by id", async () => {
+        const _user = { ...user }
+        delete _user.password;
+        mockingoose(User).toReturn(_user, "findByIdAndDelete");
+
+        const _userRepository = new UserRepository({ User })
+        const expected = await _userRepository.delete(_user._id)
+
+        expect(JSON.parse(JSON.stringify(expected))).toEqual(true)
+
+    })
+
+
     
 
     
