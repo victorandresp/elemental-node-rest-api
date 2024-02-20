@@ -33,4 +33,21 @@ describe("User Repository Test", ()=>{
         expect(JSON.parse(JSON.stringify(expected))).toMatchObject(_user)
 
     })
+
+    it("Should return a user collection", async () => {
+        const _users = users.map(user =>{
+            delete user.password;
+            return user
+        })
+        mockingoose(User).toReturn(_users, "find");
+
+        const _userRepository = new UserRepository({ User })
+        const expected = await _userRepository.getAll(_users)
+
+        expect(JSON.parse(JSON.stringify(expected))).toMatchObject(_users)
+
+    })
+
+    
+    
 })
