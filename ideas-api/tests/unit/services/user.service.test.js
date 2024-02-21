@@ -41,4 +41,13 @@ describe("User Service Test", ()=>{
         const expected = await _userService.update(user._id, user)
         expect(expected).toMatchObject(user)
     })
+
+    it("Should delete a user by id", async () => {
+        const UserRepository = UserRepositoryMock
+        UserRepository.delete.mockReturnValue(true)
+
+        const _userService = new UserService({ UserRepository })
+        const expected = await _userService.delete(user._id)
+        expect(expected).toEqual(true)
+    })
 })
