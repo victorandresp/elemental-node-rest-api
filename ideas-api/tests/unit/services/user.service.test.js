@@ -32,4 +32,13 @@ describe("User Service Test", ()=>{
         const expected = await _userService.getAll()
         expect(expected).toMatchObject(users)
     })
+
+    it("Should update a user by id", async () => {
+        const UserRepository = UserRepositoryMock
+        UserRepository.update.mockReturnValue(user)
+
+        const _userService = new UserService({ UserRepository })
+        const expected = await _userService.update(user._id, user)
+        expect(expected).toMatchObject(user)
+    })
 })
