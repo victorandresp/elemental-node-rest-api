@@ -23,4 +23,13 @@ describe("User Service Test", ()=>{
         const expected = await _userService.getUserByUsername(user.username)
         expect(expected).toMatchObject(user)
     })
+
+    it("Should return a user collection", async () => {
+        const UserRepository = UserRepositoryMock
+        UserRepository.getAll.mockReturnValue(users)
+
+        const _userService = new UserService({ UserRepository })
+        const expected = await _userService.getAll()
+        expect(expected).toMatchObject(users)
+    })
 })
