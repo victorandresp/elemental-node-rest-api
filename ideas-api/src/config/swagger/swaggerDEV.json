@@ -57,6 +57,42 @@
                     }
                 }
             }
+        },
+        "/user/{id}":{
+            "get":{
+                "tags":["User"],
+                "summary":"Finds one User",
+                "description":"",
+                "produces":["application/json"],
+                "parameters":[
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "in": "path",
+                        "description":"User id",
+                        "required": true
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description": "successful operation",
+                        "schema":{
+                            "type": "array",
+                            "items": {
+                                "$ref":"#/definitions/User"
+                            }
+                        }
+                    },
+                    "400":{
+                        "description": "invalid tag value"
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "User":{
+            
         }
     }
 }
