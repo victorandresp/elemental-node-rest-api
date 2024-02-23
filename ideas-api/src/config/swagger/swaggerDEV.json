@@ -92,7 +92,22 @@
     },
     "definitions":{
         "User":{
-            
+            "type":"object",
+            "properties":{
+                "_id": {
+                    "type":"integer",
+                    "format":"int64"
+                },
+                "name":{ 
+                    "type":"string"
+                },
+                "username":{ 
+                    "type":"string"
+                },
+                "password":{ 
+                    "type":"string"
+                }
+            }
         }
     }
 }
