@@ -87,6 +87,43 @@
                         "description": "invalid tag value"
                     }
                 }
+            },
+            "patch":{
+                "tags":["User"],
+                "summary":"Update user by id",
+                "description":"",
+                "produces":["application/json"],
+                "parameters":[
+                    {
+                        "name": "userId",
+                        "type": "string",
+                        "in": "path",
+                        "description":"User id",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema":{
+                            "$ref":"#/definitions/User"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description": "successful operation",
+                        "schema":{
+                            "type": "array",
+                            "items": {
+                                "$ref":"#/definitions/User"
+                            }
+                        }
+                    },
+                    "400":{
+                        "description": "id must be sent"
+                    }
+                }
             }
         }
     },
