@@ -124,6 +124,32 @@
                         "description": "id must be sent"
                     }
                 }
+            },
+            "delete":{
+                "tags":["User"],
+                "summary":"Delete user by id",
+                "description":"",
+                "produces":["application/json"],
+                "parameters":[
+                    {
+                        "name": "userId",
+                        "type": "string",
+                        "in": "path",
+                        "description":"User id",
+                        "required": true
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description": "successful operation",
+                        "schema":{
+                            "type": "boolean"
+                        }
+                    },
+                    "400":{
+                        "description": "id must be sent"
+                    }
+                }
             }
         }
     },
